@@ -1,0 +1,20 @@
+package ToolsQA.com.qait;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Action {
+	public WebDriver driver;
+	
+	public Action(WebDriver driver)
+	{
+		this.driver=driver;
+	}
+	public String LaunchUrl()
+	{//System.setProperty("webdriver.chrome.driver", "C:\\Users\\shubhinigam\\eclipse-workspace\\TATOC\\drivers\\chromedriver.exe");
+	//driver=new ChromeDriver();
+		//driver.get("http://10.0.1.86/tatoc");
+		return this.driver.getTitle().toString();
+		
+	}
+	}

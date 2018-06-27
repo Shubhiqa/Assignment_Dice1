@@ -1,0 +1,23 @@
+package ToolsQA.com.qait;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeClass;
+import junit.framework.Assert;
+
+public class Test {
+
+	SessionInitiator test;
+	
+	@BeforeClass
+	public void open()
+	{
+		//test = new SessionInitiator();	
+	}
+	
+	
+	@Test(priority=1)
+	public void BasicCourseVerify() throws InterruptedException
+	{
+		Assert.assertTrue(a.clickOnBasicCourse().equalsIgnoreCase("http://10.0.1.86/tatoc/basic/grid/gate"));		
+	}
+}

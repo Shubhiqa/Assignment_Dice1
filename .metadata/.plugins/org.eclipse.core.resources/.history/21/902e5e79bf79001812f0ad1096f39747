@@ -1,0 +1,9 @@
+package tatoc;
+
+public class Tataoc2 {
+
+	@Test(priority=1)
+	{
+		public
+	}
+}

@@ -1,0 +1,28 @@
+package ToolsQA.com.qait;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import junit.framework.Assert;
+
+public class Action {
+	
+	public WebDriver driver;
+
+	public Action(WebDriver driver) {
+		this.driver = driver;
+	}
+
+	public void clickOnBasicCourse() throws InterruptedException
+	{
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//a[text()='Basic Course']")).click();
+		Thread.sleep(3000);
+		
+	}
+	
+	public void verifyURL(String URL) {
+		Assert.assertTrue(driver.getCurrentUrl(),URL);
+	}
+
+}

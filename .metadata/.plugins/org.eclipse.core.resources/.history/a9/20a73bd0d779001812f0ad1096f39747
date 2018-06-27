@@ -1,0 +1,33 @@
+package tatoc;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+public class TestTatoc1 {
+	WebDriver driver;
+	Tatoc1 tatoc;
+	
+	TestTatoc1(WebDriver driver)
+	{
+		this.driver=driver;
+	}
+	
+	@BeforeClass
+	public void open()
+	{
+	driver.get("http://10.0.1.86/tatoc");
+	}
+	
+	@Test(priority=0)
+	public void testUrl()
+	{
+		Assert.assertTrue(tatoc.LaunchUrl().equals(T.A.T.O.C));
+	}
+	
+	
+	
+
+}

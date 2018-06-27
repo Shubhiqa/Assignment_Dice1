@@ -1,0 +1,20 @@
+package tatoc;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class xyz {
+
+	public WebDriver driver;
+	xyz(WebDriver driver)
+	{
+		this.driver=driver;
+	}
+	public void LaunchUrl()
+	{
+		driver.get("http://10.0.1.86/tatoc");
+		System.out.println(driver.findElement(By.className("title")));
+		
+	}
+}
+

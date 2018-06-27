@@ -1,0 +1,27 @@
+package ToolsQA.com.qait;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class Action {
+	public WebDriver driver;
+	
+	public Action(WebDriver driver) {
+		this.driver = driver;
+	}
+   public String ClickonBasicCourse()
+   {
+	   WebElement Basic=driver.findElement(By.xpath("//a[text()=='Basic Course'"));
+	   Basic.click();
+	   String url = driver.getTitle();
+		System.out.println(url);
+		return url;
+	   
+   }
+	
+	
+	
+	
+	
+	}

@@ -1,0 +1,34 @@
+package ToolsQA.com.qait;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import junit.framework.Assert;
+
+public class test {
+
+	WebDriver driver;
+	Action a;
+	SessionInitiator s;
+	
+	
+	@BeforeClass
+	public void open()
+	{
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\shubhinigam\\eclipse-workspace\\TATOC\\drivers");
+
+		driver = new ChromeDriver();
+		driver.get("http://10.0.1.86/tatoc");
+		a = new Action(driver);
+		s = new SessionInitiator(driver);
+	}
+	
+	
+	@Test
+	public void verifyURL() {
+		Assert.assertTrue(s.Launchurl().equalsIgnoreCase("http://10.0.1.86/tatoc"));
+		
+	}
+}

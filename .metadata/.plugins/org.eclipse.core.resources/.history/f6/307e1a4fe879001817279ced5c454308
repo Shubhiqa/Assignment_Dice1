@@ -1,0 +1,13 @@
+package ToolsQA.com.qait;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SessionInitiator {
+	public static void main()
+	{
+		WebDriver driver;
+		driver = new ChromeDriver();
+		driver.get("http://10.0.1.86/tatoc");
+	}
+
+}

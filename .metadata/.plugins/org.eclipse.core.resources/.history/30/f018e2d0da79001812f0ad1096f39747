@@ -1,0 +1,72 @@
+package tatoc;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+public class Tatoc1 {
+	
+	public WebDriver driver;
+	Tatoc1(WebDriver driver)
+	{
+		this.driver=driver;
+	}
+
+	public String LaunchUrl()
+	{
+		driver.get("http://10.0.1.86/tatoc");
+		return driver.getTitle();
+		
+	}
+	public void ClickonBasicCourse()
+	{
+		driver.findElement(By.xpath("//a[contains(text(),'Basic Course' )]")).click();
+	}
+	public void ClickonGreenBox()
+	{
+		driver.findElement(By.className("greenbox")).click();
+	}
+	public void RepaintBox()
+	{
+		WebElement mainframe=driver.findElement(By.id("main"));
+		driver.switchTo().frame(mainframe);
+		
+		WebElement Box1=driver.findElement(By.xpath("//div[text()='Box 1']"));
+		String Box1Color=Box1.getAttribute("class");
+		
+		WebElement childframe=driver.findElement(By.id("child"));
+		driver.switchTo().frame(childframe);
+		WebElement Box2=driver.findElement(By.xpath("//div[text()='Box 2']"));
+		String Box2Color=Box2.getAttribute("class");
+		
+		while(true)
+		{
+			
+			if(Box1Color.equalsIgnoreCase(Box2Color))
+			{
+				driver.switchTo().frame(mainframe);
+				break;
+			}
+			else
+			{
+				driver.switchTo().frame(mainframe);
+				WebElement repaintLink = driver.findElement(By.xpath("//a[text()='Repaint Box 2']"));
+				repaintLink.click();
+			}
+		}
+		WebElement proceed=driver.findElement(By.xpath("//a[text()='Proceed']"));
+		proceed.click();
+		
+		}
+	public void DragandDrop()
+	{
+		WebElement source=driver.findElement(By.id("dragbox"));
+		WebElement dest=driver.findElement(By.id("dropbox"));
+		
+		Actions a=new Actions(driver);
+		a.dragAndDrop(source, dest);
+		
+		
+	}
+}

@@ -1,0 +1,29 @@
+package ToolsQA.com.qait;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SessionInitiator {
+	public WebDriver driver;
+	public SessionInitiator(WebDriver driver)
+	{
+		this.driver=driver;
+	}
+	public void startsession()
+	{
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\shubhinigam\\eclipse-workspace\\TATOC\\drivers\\chromedriver.exe");
+		driver=new ChromeDriver();
+		Launchurl();
+	}
+	public String Launchurl()
+	{
+		driver.get("http://10.0.1.86/tatoc");
+		return driver.getTitle().toString(); 
+	}
+	public void initiate()
+	{
+		startsession();
+		//Action a =new Action();
+		
+	}
+}

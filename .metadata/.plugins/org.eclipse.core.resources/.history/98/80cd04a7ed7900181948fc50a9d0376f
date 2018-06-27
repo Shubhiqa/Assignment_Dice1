@@ -1,0 +1,15 @@
+package ToolsQA.com.qait;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Action {
+	public WebDriver driver;
+	
+	
+	
+	public String LaunchUrl()
+	{
+		
+	}
+	}

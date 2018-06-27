@@ -1,0 +1,25 @@
+package ToolsQA.com.qait;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class Action {
+	public WebDriver driver;
+
+	public Action(WebDriver driver) {
+		this.driver = driver;
+	}
+
+	public String clickOnBasicCourse() throws InterruptedException
+
+	{
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//a[text()='Basic Course']")).click();
+		Thread.sleep(3000);
+		String url = driver.getCurrentUrl();
+		System.out.println(url);
+		return url;
+
+	}
+
+}

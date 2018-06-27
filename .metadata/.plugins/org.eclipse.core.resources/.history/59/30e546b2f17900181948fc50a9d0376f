@@ -1,0 +1,17 @@
+package ToolsQA.com.qait;
+
+import org.openqa.selenium.WebDriver;
+
+public class Action {
+	public WebDriver driver;
+	
+	public Action(WebDriver driver) {
+		this.driver = driver;
+	}
+
+	
+	
+	
+	
+	
+	}
